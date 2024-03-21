@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title #{pathname}
+  body 
+    h1(style='text-align:center;') #{pathname}
+    table(style='width:100%; text-align: center')
+      tr
+        th(style='text-align: left') Название
+        th Размер
+        th Последние изменения 
+      each child in children
+        tr 
+          td(style='text-align: left;')
+            img(style='text-align: left; height: 24px; width: 24px; vertical-align: middle;', src=child.icon)
+            a(href=child.href)=child.name
+          td= child.size 
+          td= child.lastModified
+
+
+
+
